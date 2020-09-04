@@ -135,9 +135,9 @@ h3 {
     .headerImg {
         display: flex;
         flex-flow: column;
-        min-width: 100%;
+        width: 90px;
         height: 70%;
-        object-fit: fill;
+        object-fit: contain;
     }
 
     .main {
@@ -155,5 +155,16 @@ h3 {
         height: 32px;
         border-radius: 0.5px;
         align-content: center;
+    }
+
+    figcaption {
+        display: none;
+    }
+
+    .footer {
+        grid-area: ft;
+        position: absolute;
+        right: 0;
+        padding-bottom: 5px;
     }
 }

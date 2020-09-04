@@ -1,0 +1,36 @@
+@import 'styles.css';
+
+body {
+    font-family: 'Indie Flower', cursive ,'Courier New', Courier, monospace;
+}
+
+h1 {
+    padding: 5px;
+    text-align: center;
+    color: #2a5e50;
+}
+
+a > button {
+    margin-left: 45%;
+    color: #2a5e50;
+    background-color: aliceblue;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+}
+
+a > button:hover {
+    background-color: #2fa787;
+    color: #FFF;
+}
+
+a > button:active {
+    background-color: #2a5e50;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}

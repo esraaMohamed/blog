@@ -7,6 +7,8 @@ jobs:
   test-transition-issue:
     name: Transition Issue
     runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.find.outputs.issue }}
     steps:
     - name: Login
       uses: atlassian/gajira-login@master
@@ -23,5 +25,5 @@ jobs:
     - name: Transition issue
       uses: atlassian/gajira-transition@master
       with:
-        issue: ${{ steps.create.outputs.issue }}
+        issue: ${{ steps.find.outputs.issue }}
         transition: "In progress"

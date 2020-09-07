@@ -1,7 +1,7 @@
 on:
   push
 
-name: Test Transition Issue
+name: Test Transition Issues
 
 jobs:
   test-transition-issue:

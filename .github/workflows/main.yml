@@ -1,0 +1,12 @@
+name: Jira Issue Transition
+
+# You may pin to the exact commit or the version.
+  # uses: atlassian/gajira-transition@634d97dab80bdd26bbe6a74735fd3385e3259a0e
+  uses: atlassian/gajira-transition@v2.0.1
+  with:
+    # Key of the issue to be transitioned
+    issue: 
+    # The transition to apply to the issue, e.g. 'In Progress'
+    transition: # optional
+    # The id of a transition to apply to the issue
+    transitionId: # optional

@@ -1,12 +1,26 @@
-name: Jira Issue Transition
+on:
+  push
 
-# You may pin to the exact commit or the version.
-  # uses: atlassian/gajira-transition@634d97dab80bdd26bbe6a74735fd3385e3259a0e
-  uses: atlassian/gajira-transition@v2.0.1
-  with:
-    # Key of the issue to be transitioned
-    issue: 
-    # The transition to apply to the issue, e.g. 'In Progress'
-    transition: # optional
-    # The id of a transition to apply to the issue
-    transitionId: # optional
+name: Test Transition Issue
+
+jobs:
+  test-transition-issue:
+    name: Transition Issue
+    runs-on: ubuntu-latest
+    steps:
+    - name: Login
+      uses: atlassian/gajira-login@master
+      env:
+        JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+        JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
+        JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+        
+    - name: Create new issue
+      id: create
+      uses: atlassian/gajira-create@master
+
+    - name: Transition issue
+      uses: atlassian/gajira-transition@master
+      with:
+        issue: ${{ steps.create.outputs.issue }}
+        transition: "In progress"

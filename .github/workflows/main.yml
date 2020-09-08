@@ -39,8 +39,5 @@ jobs:
       with:
         issue: ${{ steps.find.outputs.issue }}
         comment: from ${{ steps.branch.outputs.branchname }} branch
-    - name: Merge PR
-      uses: justinyoo/github-pr-merge-action@v0.8.0
-      with:
-        authToken: ${{ secrets.GITHUB_TOKEN }}
-        deleteBranch: 'true'
+    - name: Clean up
+      uses: cometkim/cleankeeper@v1.2.0

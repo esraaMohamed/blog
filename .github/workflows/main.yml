@@ -13,7 +13,7 @@ jobs:
     - uses: nelonoel/branch-name@v1
     # Use branch name for whatever purpose
     - id: branch
-      run: echo "::set-output name=bname::BRANCH_NAME"
+      run: echo ${BRANCH_NAME}
       
   test-transition-issue:
     name: Transition Issue
@@ -43,4 +43,4 @@ jobs:
       uses: atlassian/gajira-comment@master
       with:
         issue: ${{ steps.find.outputs.issue }}
-        comment: ${{ needs.build.outputs.branchname }}
+        comment: ${{ env.BRANCH_NAME }}

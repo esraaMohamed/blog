@@ -37,4 +37,4 @@ jobs:
       uses: atlassian/gajira-comment@master
       with:
         issue: ${{ steps.find.outputs.issue }}
-        comment: from ${{ steps.branch.outputs.branchname }} branch
+        comment: merged to ${{ steps.branch.outputs.branchname }} branch

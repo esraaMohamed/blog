@@ -41,4 +41,4 @@ jobs:
       uses: atlassian/gajira-comment@master
       with:
         issue: ${{ steps.find.outputs.issue }}
-        comment: echo "${{ needs.build.steps.branch.outputs.branchname }}"
+        comment: echo "${{ build.steps.branch.outputs.branchname }}"

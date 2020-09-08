@@ -4,8 +4,8 @@ on:
 name: Test Transition Issues
 
 jobs:
-  test-transition-issue:
-    name: Transition Issue
+  test-transition-and-comment-issue:
+    name: Transition Issue and Add Comment
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1

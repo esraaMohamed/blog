@@ -41,3 +41,4 @@ jobs:
         comment: from ${{ steps.branch.outputs.branchname }} branch
     - name: Clean up
       uses: cometkim/cleankeeper@v1.2.0
+      env: ${{ secrets.GITHUB_TOKEN }}

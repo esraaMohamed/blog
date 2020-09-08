@@ -1,5 +1,7 @@
 on:
-  push
+  push:
+    branches:
+      - master
 
 name: Test Transition Issues
 
@@ -37,3 +39,14 @@ jobs:
       with:
         issue: ${{ steps.find.outputs.issue }}
         comment: from ${{ steps.branch.outputs.branchname }} branch
+    - name: Merge PR
+      uses: justinyoo/github-pr-merge-action@v0.8.0
+      with:
+        authToken: ${{ secrets.GITHUB_TOKEN }}
+        owner: <github_username_or_organisation_name>
+        repository: <repository_name>
+        issueId: '1234'
+        mergeMethod: Squash
+        commitTitle: ''
+        commitDescription: ''
+        deleteBranch: 'true'

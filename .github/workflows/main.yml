@@ -20,8 +20,6 @@ jobs:
     name: Transition Issue
     runs-on: ubuntu-latest
     needs: build
-#     outputs:
-#       output1: ${{ steps.find.outputs.issue }}
     steps:
     - name: Login
       uses: atlassian/gajira-login@master
@@ -46,4 +44,4 @@ jobs:
       uses: atlassian/gajira-comment@master
       with:
         issue: ${{ steps.find.outputs.issue }}
-        comment: ${{ needs.build.steps.branch.outputs.branchname }}
+        comment: ${{ build.steps.branch.outputs.branchname }}

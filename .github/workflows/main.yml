@@ -10,11 +10,10 @@ jobs:
       branchname: ${{ steps.step1.outputs.bname }}
     steps:
     - uses: actions/checkout@v1
-#     - run: npm ci
     - uses: nelonoel/branch-name@v1
     # Use branch name for whatever purpose
     - id: branch
-      run: echo "::set-output name=bname::${BRANCH_NAME}"
+      run: echo ${{ steps.branch.outputs.branchname }}
       
   test-transition-issue:
     name: Transition Issue

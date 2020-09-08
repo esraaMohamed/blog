@@ -6,13 +6,12 @@ on:
 name: Test Transition Issues
 
 jobs:
-  test-transition-and-comment-issue:
+  test-transition-issue-and-add-comment:
     name: Transition Issue and Add Comment
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
     - uses: nelonoel/branch-name@v1
-    # Use branch name for whatever purpose
     - id: branch
       run: echo "::set-output name=branchname::${BRANCH_NAME}"
     - name: Login

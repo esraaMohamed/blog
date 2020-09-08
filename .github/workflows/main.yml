@@ -27,4 +27,10 @@ jobs:
       uses: atlassian/gajira-transition@master
       with:
         issue: ${{ steps.find.outputs.issue }}
-        transition: "In progress"
+        transition: "Done"
+
+    - name: Comment on issue
+      uses: atlassian/gajira-comment@master
+      with:
+        issue: ${{ steps.find.outputs.issue }}
+        comment: Hello from GitHub actions

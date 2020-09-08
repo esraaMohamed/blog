@@ -7,7 +7,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     outputs:
-      output1: ${{ steps.branch.outputs.branchname }}
+      branchname: ${{ steps.branch.outputs.branchname }}
     steps:
     - uses: actions/checkout@v1
 #     - run: npm ci

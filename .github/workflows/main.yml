@@ -6,14 +6,12 @@ name: Test Transition Issues
 jobs:
   build:
     runs-on: ubuntu-latest
-    outputs:
-      branchname: ${{ steps.step1.outputs.bname }}
     steps:
     - uses: actions/checkout@v1
     - uses: nelonoel/branch-name@v1
     # Use branch name for whatever purpose
     - id: branch
-      run: echo ${BRANCH_NAME}
+      run: echo "::set-output name=branchname::${BRANCH_NAME}"
       
   test-transition-issue:
     name: Transition Issue
@@ -43,4 +41,4 @@ jobs:
       uses: atlassian/gajira-comment@master
       with:
         issue: ${{ steps.find.outputs.issue }}
-        comment: ${{ needs.build.outputs.branchname }}
+        comment: echo "${{ jobs.build.steps.branch.outputs.branchname }}"

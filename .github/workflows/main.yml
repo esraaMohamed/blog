@@ -43,4 +43,4 @@ jobs:
       uses: atlassian/gajira-comment@master
       with:
         issue: ${{ steps.find.outputs.issue }}
-        comment: echo ${{ BRANCH_NAME }}
+        comment: echo ${{ env.BRANCH_NAME }}

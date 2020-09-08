@@ -31,7 +31,7 @@ jobs:
       uses: atlassian/gajira-transition@master
       with:
         issue: ${{ steps.find.outputs.issue }}
-        transition: "Done"
+        transition: "Ready for deployment"
 
     - name: Comment on issue
       uses: atlassian/gajira-comment@master

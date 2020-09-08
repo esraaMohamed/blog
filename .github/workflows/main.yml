@@ -6,13 +6,15 @@ name: Test Transition Issues
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      branchname: ${{ steps.step1.outputs.test }}
     steps:
     - uses: actions/checkout@v1
 #     - run: npm ci
     - uses: nelonoel/branch-name@v1
     # Use branch name for whatever purpose
-    - id: branchname
-      run: echo "::set-output name=branch::(echo ${BRANCH_NAME})"
+    - id: branch
+      run: echo ${BRANCH_NAME}
       
   test-transition-issue:
     name: Transition Issue

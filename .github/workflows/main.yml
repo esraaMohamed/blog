@@ -13,7 +13,7 @@ jobs:
     - uses: nelonoel/branch-name@v1
     # Use branch name for whatever purpose
     - id: branch
-      run: echo ${{ steps.branch.outputs.branchname }}
+      run: echo "::set-output name=bname::BRANCH_NAME"
       
   test-transition-issue:
     name: Transition Issue

@@ -14,7 +14,7 @@ jobs:
     - uses: nelonoel/branch-name@v1
     # Use branch name for whatever purpose
     - id: branch
-      run: echo "::set-output branch=${BRANCH_NAME}"
+      run: echo "::set-output name=test::${BRANCH_NAME}"
       
   test-transition-issue:
     name: Transition Issue

@@ -27,6 +27,7 @@ jobs:
       with:
         from: commits
 
+
     - name: Transition issue
       uses: atlassian/gajira-transition@master
       with:
